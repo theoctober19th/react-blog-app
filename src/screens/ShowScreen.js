@@ -3,7 +3,10 @@ import {
   StyleSheet,
   View,
   Text,
+  TouchableOpacity
 } from 'react-native';
+
+import Icon from 'react-native-vector-icons/FontAwesome'
 
 import {Context as BlogContext} from '@context/BlogContext';
 
@@ -21,6 +24,19 @@ const ShowScreen = ({navigation}) => {
       </View>
   );
 };
+
+ShowScreen.navigationOptions = ({navigation}) => {
+  return {
+    headerRight: (
+      <TouchableOpacity
+        style={{marginRight: 20}}
+        onPress={() => navigation.navigate('Edit', {id: navigation.getParam('id')})}
+      >
+        <Icon name='pencil' size={25} color={'#ff0000'}/>
+      </TouchableOpacity>
+    )
+  };
+}
 
 const styles = StyleSheet.create({
   global_container: {

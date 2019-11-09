@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useContext, useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -7,19 +7,38 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const EditScreen = () => {
+import {Context as BlogContext} from '@context/BlogContext';
+
+const EditScreen = ({navigation}) => {
+
+  const id = navigation.getParam('id');
+  const {state, editBlogPost} = useContext(BlogContext);
+  const post = state.find(item => item.id === id);
+  const [title, setTitle] = useState(post.title);
+  const [content, setContent] = useState(post.content);
+
   return(
       <View style={styles.global_container}>
         <Text style={styles.titleText}> Title: </Text>
         <TextInput style={styles.titleInput}
           placeholder='Title'
+          onChangeText = {(newtext) => setTitle(newtext)}
+          value={title}
         />
         <Text style={styles.titleText}> Content </Text>
         <TextInput style={styles.contentInput}
           placeholder='Content'
+          onChangeText={newtext => setContent(newtext)}
+          value={content}
           multiline
         />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() =>{
+            editBlogPost(id, title, content)
+            navigation.pop();
+          } }
+        >
           <Text style={styles.buttonText}>Save</Text>
         </TouchableOpacity>
       </View>
@@ -39,7 +58,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     backgroundColor: '#cecece',
     borderRadius: 10,
-    paddingLeft: 10
+    padding: 10
   },
   contentInput:{
     padding: 15,

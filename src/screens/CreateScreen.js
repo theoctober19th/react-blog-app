@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, useContext, useState} from 'react';
 import {
   StyleSheet,
   View,
@@ -7,19 +7,36 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-const CreateScreen = () => {
+import {Context as BlogContext} from '@context/BlogContext';
+
+const CreateScreen = ({navigation}) => {
+
+  const {addBlogPost} = useContext(BlogContext);
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+
   return(
       <View style={styles.global_container}>
         <Text style={styles.titleText}> Title: </Text>
         <TextInput style={styles.titleInput}
           placeholder='Title'
+          value={title}
+          onChangeText={(newtext) => setTitle(newtext)}
         />
         <Text style={styles.titleText}> Content </Text>
         <TextInput style={styles.contentInput}
           placeholder='Content'
+          value={content}
+          onChangeText={(newtext) => setContent(newtext)}
           multiline
         />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => {
+            addBlogPost(title, content);
+            navigation.navigate('Index');
+          }}
+        >
           <Text style={styles.buttonText}>Save</Text>
         </TouchableOpacity>
       </View>
@@ -39,7 +56,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     backgroundColor: '#cecece',
     borderRadius: 10,
-    paddingLeft: 10
+    padding: 10
   },
   contentInput:{
     padding: 15,
@@ -52,10 +69,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     backgroundColor: '#6a1b9a',
     height: 50,
-    width: 400,
     alignSelf: 'center',
     borderRadius: 10,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignSelf: 'stretch'
   },
   buttonText:{
     color: 'white',
