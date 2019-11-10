@@ -1,9 +1,44 @@
 {
-  "posts" : [
+  "posts": [
     {
-      "id" : "1",
-      "title": "Dummy",
-      "content": "Dummy"
+      "id": "0",
+      "title": "Rick and Morty Released",
+      "content": "After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth's doorstep to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry, isn't as happy about the family reunion. Jerry is concerned about Rick, a sociopathic scientist, using the garage as his personal laboratory. In the lab, Rick works on a number of sci-fi gadgets, some of which could be considered dangerous. But that's not all Rick does that concerns Jerry. He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer."
+    },
+    {
+      "id": "1",
+      "title": "Mr. Robot Goes Silent",
+      "content": "Elliot, a cyber-security engineer suffering from anxiety, works for a corporation and hacks felons by night. Panic strikes him after Mr Robot, a cryptic anarchist, recruits him to ruin his company."
+    },
+    {
+      "id": "2",
+      "title": "Where did Game of Thrones go wrong?",
+      "content": "In the end, the eighth season of Game of Thrones ended up with a pretty disappointing Rotten Tomatoes score as well as awful word of mouth among fans, some of whom started a full-on petition to rewrite the season without \"incompetent writers.\" With so much buildup and anticipation, it was never going to please everyone or tie everything on this massive show up perfectly, but thanks to rushed execution, frustrating character choices, and other inconsistencies, a number of diehard Thrones fans are unhappy — so here's exactly what went wrong with Game of Thrones in the end."
+    },
+    {
+      "id": "3",
+      "title": "Rick and Morty Released",
+      "content": "After having been missing for nearly 20 years, Rick Sanchez suddenly arrives at daughter Beth's doorstep to move in with her and her family. Although Beth welcomes Rick into her home, her husband, Jerry, isn't as happy about the family reunion. Jerry is concerned about Rick, a sociopathic scientist, using the garage as his personal laboratory. In the lab, Rick works on a number of sci-fi gadgets, some of which could be considered dangerous. But that's not all Rick does that concerns Jerry. He also goes on adventures across the universe that often involve his grandchildren, Morty and Summer."
+    },
+    {
+      "id": "4",
+      "title": "A Study in Pink",
+      "content": "I've blacked out a few names and places because of legal matters but, other than that, this is what happened on the night I moved in with Sherlock Holmes.\n\nWhen I first met Sherlock, he told me my life story. He could tell so much about me from my limp, my tan and my mobile phone. And that's the thing with him. It's no use trying to hide what you are because Sherlock sees right through everyone and everything in seconds. What's incredible, though, is how spectacularly ignorant he is about some things.\n\nThis morning, for example, he asked me who the Prime Minister was. Last week he seemed to genuinely not know the Earth goes round the Sun. Seriously. He didn't know. He didn't think the Sun went round the Earth or anything. He just didn't care. I still can't quite believe it. In so many ways, he's the cleverest person I've ever met but there are these blank spots that are almost terrifying. At least I've got used to him now. Well, I say that, I suspect I'll never really get used to him. It's just, on that first night, I literally had no idea of what was to come. I mean, how could I?"
+    },
+    {
+      "id": "5",
+      "title": "The grand power of minor characters",
+      "content": "Creating three-dimensional main characters is obviously an important skill for any writer. You want your readers (or viewers) to identify with your characters’ struggles and choices as their journeys propel the story. But what often separates the good stories from the stories people obsess over are the minor characters."
+    },
+    {
+      "id": "6",
+      "title": "MacBook Pro (16-inch): Rumors, Release Date and Price",
+      "content": "Apple is said to be on the verge of bringing a new 16-inch MacBook Pro into its family of laptops. If rumors hold true, the new notebook would have the largest screen of any MacBook Pro since Apple discontinued the 17-inch model back in 2012.\n\nThere are no confirmed details about the 16-inch MacBook Pro as Apple has remained tight-lipped while rumors continue to circulate. However, reports from reliable analysts claim that a new 16-inch MacBook Pro will arrive by the end of the year with an improved display and high price tag. It is also expected to replace the current 15.4-inch MacBook Pro. \n\n Here is everything we know about the 16-inch MacBook Pro, and what we want to see from this upcoming notebook."
+    },
+    {
+      "id": "7",
+      "title": "Flutter vs React Native: A Developer’s Perspective",
+      "content": "Due to the growing popularity of mobile apps, almost every company needs a mobile app or apps to remain competitive in the market. And what is more, companies are looking for an option to build mobile apps, especially for iOS and Android, with faster speed and less resources. Obviously, Apple and Google have provided native tools and technologies to build apps. iOS app developers can build apps using Xcode and Swift, while Android developers use Android Studio and Kotlin/Java. However, this requires engineers to learn two completely different sets of technologies. As a result, companies have started to adopt cross-platform solutions over the native solutions to build apps for both iOS and Android faster using a single language."
     }
   ]
 }

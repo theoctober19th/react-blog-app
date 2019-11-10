@@ -2,13 +2,16 @@
 import {blogs} from '@data/dummydata';
 
 import createDataContext from '@context/createDataContext'
+import typicode from '@api/typicode';
 
 var idCounter = 0;
 
 const blogReducer = (state, action) => {
   switch (action.type) {
-    case 'add_post':
-      return ([...state, action.payload]);
+    case 'refresh_posts':
+      return action.payload;
+    // case 'add_post':
+    //   return ([...state, action.payload]);
     case 'delete_post':
       const postId = action.payload;
       return state.filter((item) => item.id !== postId);
@@ -26,26 +29,47 @@ const blogReducer = (state, action) => {
 };
 
 const addBlogPost = (dispatch) => {
-  return (title, content) => {
-    dispatch({type: 'add_post', payload:{id: idCounter++, title:title, content:content}})
+  return async (title, content) => {
+    try{
+      await typicode.post('/posts', {id: idCounter++, title:title, content:content});
+    }catch(e){
+      console.log(e);
+    }
+    //dispatch({type: 'add_post', payload:{id: idCounter++, title:title, content:content}})
   }
 }
 
 const refreshBlogList = (dispatch) => {
-  return () => {
-    console.log('refresh called');
+  return async () => {
+    try{
+      const response = await typicode.get('/posts');
+      dispatch({type: 'refresh_posts', payload: response.data})
+    }catch(e){
+      console.log('error occurred' + e)
+    }
   }
 }
 
 const deleteBlogPost = (dispatch) => {
-  return (id) => {
-    dispatch({type: 'delete_post', payload:id})
+  return async (id) => {
+    //dispatch({type: 'delete_post', payload:id})
+    try{
+      await typicode.delete(`posts/${id}`);
+      dispatch({type: 'delete_post', payload: id})
+    }catch(e){
+      console.log(e);
+    }
   }
 }
 
 const editBlogPost = (dispatch) => {
-  return(id, title, content) => {
-    dispatch({type: 'edit_post', payload:{id:id, title:title, content:content}})
+  return async (id, title, content) => {
+    //dispatch({type: 'edit_post', payload:{id:id, title:title, content:content}})
+    try{
+      await typicode.put(`posts/${id}`, {id, title, content})
+    }catch(e){
+      console.log(e);
+    }
   }
 }
 

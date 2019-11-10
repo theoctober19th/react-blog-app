@@ -1,4 +1,4 @@
-import React, {Component, useContext} from 'react';
+import React, {Component, useContext, useEffect} from 'react';
 import {
   StyleSheet,
   View,
@@ -12,8 +12,13 @@ import {Context as BlogContext} from '@context/BlogContext';
 
 const ShowScreen = ({navigation}) => {
   const id = navigation.getParam('id');
-  const {state} = useContext(BlogContext);
+  const {state, refreshBlogList} = useContext(BlogContext);
   const blog = state.find((item) => item.id === id);
+
+  useEffect(() => {
+    const listener = navigation.addListener('didFocus', () => refreshBlogList());
+    return () => listener.remove();
+  }, []);
 
   return(
       <View style={styles.global_container}>

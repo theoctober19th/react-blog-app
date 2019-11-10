@@ -4,7 +4,8 @@ import {
   View,
   Text,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
+  KeyboardAvoidingView,
 } from 'react-native';
 
 import {Context as BlogContext} from '@context/BlogContext';
@@ -30,15 +31,17 @@ const CreateScreen = ({navigation}) => {
           onChangeText={(newtext) => setContent(newtext)}
           multiline
         />
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            addBlogPost(title, content);
-            navigation.navigate('Index');
-          }}
-        >
-          <Text style={styles.buttonText}>Save</Text>
-        </TouchableOpacity>
+        <KeyboardAvoidingView>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              addBlogPost(title, content);
+              navigation.navigate('Index');
+            }}
+          >
+            <Text style={styles.buttonText}>Save</Text>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
       </View>
   );
 };

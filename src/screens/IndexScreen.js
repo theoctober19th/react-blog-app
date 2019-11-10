@@ -4,7 +4,9 @@ import {
   StyleSheet,
   View,
   Text,
-  FlatList, Button, TouchableOpacity
+  FlatList,
+  Button,
+  TouchableOpacity,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -26,7 +28,7 @@ const IndexScreen = ({navigation}) => {
     refreshBlogList();
     const listener = navigation.addListener('didFocus', () => refreshBlogList());
     return () => listener.remove();
-  }), []);
+  }, []);
 
   if(state.length == 0){
     return(
@@ -34,19 +36,19 @@ const IndexScreen = ({navigation}) => {
     )
   }else{
     return(
-        <View style={styles.global_container}>
-          <FlatList
-            data={state}
-            keyExtractor={item => item.id.toString()}
-            renderItem={({item}) => (
-              <BlogRowItem
-                title = {item.title}
-                onTextTap = {() => navigation.navigate('Show', {id: item.id}) }
-                onDeleteTap = {() => deleteBlogPost(item.id)}
-              />
-            )}
-          />
-        </View>
+      <View style={styles.global_container}>
+        <FlatList
+          data={state}
+          keyExtractor={item => item.id.toString()}
+          renderItem={({item}) => (
+            <BlogRowItem
+              title = {item.title}
+              onTextTap = {() => navigation.navigate('Show', {id: item.id}) }
+              onDeleteTap = {() => deleteBlogPost(item.id)}
+            />
+          )}
+        />
+      </View>
     );
   }
 };

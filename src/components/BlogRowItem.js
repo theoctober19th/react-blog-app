@@ -29,14 +29,22 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignItems: 'center',
     flexDirection: 'row',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    flex:1
   },
   title:{
+    flex:9,
     fontSize: 20,
-    paddingLeft: 10,
+    marginLeft: 10,
+    marginRight: 50,
+    textAlignVertical: 'center',
+    paddingTop: 10,
   },
   icon:{
-    paddingRight: 20
+    position: 'absolute',
+    right: 10,
+    bottom: 1,
+    flex:1
   }
 });
 
