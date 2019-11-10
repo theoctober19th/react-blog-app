@@ -1,4 +1,4 @@
-import React, {Component, useContext} from 'react';
+import React, {Component, useContext, useEffect} from 'react';
 
 import {
   StyleSheet,
@@ -18,9 +18,15 @@ import EmptyView from '@components/EmptyView';
 
 const IndexScreen = ({navigation}) => {
 
-  const {state, addBlogPost, deleteBlogPost}  = useContext(BlogContext);
+  const {state, addBlogPost, deleteBlogPost, refreshBlogList}  = useContext(BlogContext);
   //const addBlogPost = value.addBlogPost;
   //const posts = value.blogPosts;
+
+  useEffect(() => {
+    refreshBlogList();
+    const listener = navigation.addListener('didFocus', () => refreshBlogList());
+    return () => listener.remove();
+  }), []);
 
   if(state.length == 0){
     return(
