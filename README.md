@@ -1,8 +1,8 @@
 # React Native Blog App
 I built this application as part of the [Udemy Course](https://www.udemy.com/course/the-complete-react-native-and-redux-course/) of React Native. I'd rather call it a *Notes App*, but it doesn't matter anyway. Allows you to create blogs, edit and delete them.
 
-Here are some of the useful links if you want to practice a similar application:
-
+## Credit
+Here are some of the useful resources I used, and you can too, if you want to practice a similar application:
 [Udemy Course URL](https://www.udemy.com/course/the-complete-react-native-and-redux-course/)
 [React Navigation Library](https://github.com/react-navigation/react-navigation)
 [Axios Library](https://github.com/axios/axios)
